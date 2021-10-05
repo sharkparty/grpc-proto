@@ -1,7 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/sharkparty/olympus";
-// github.com/sharkparty/grpc-proto
+option go_package = "github.com/sharkparty/grpc-proto;grpc_proto";
 
 message CPU {
     string brand = 1;
