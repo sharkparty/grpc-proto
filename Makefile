@@ -9,5 +9,22 @@ gen:
 clean:
 	rm -rf pb
 	mkdir pb
+
+server:
+	go run cmd/server/main.go -port 8080
+
+client:
+	go run cmd/client/main.go -address 0.0.0.0:8080
+
 run:
-	go run main.go
+	go run cmd/server/main.go && go run cmd/client/main.go
+
+test:
+	go test ./serializer
+	go test ./pb
+	go test ./sample
+
+coverage:
+	go test -cover -race ./serializer
+	go test -cover -race ./pb
+	go test -cover -race ./sample
